@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Group {
+  id               String   @id @default(uuid())
+  name             String
+  description      String?
+  targetDaysPerWeek Int      @default(3) @map("target_days_per_week")
+  createdAt        DateTime @default(now()) @map("created_at")
+  notes            Note[]
+
+  @@map("groups")
+}
+
+model Note {
+  id        String   @id @default(uuid())
+  groupId   String   @map("group_id")
+  text      String
+  date      DateTime @db.Date
+  createdAt DateTime @default(now()) @map("created_at")
+  group     Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@map("notes")
+}

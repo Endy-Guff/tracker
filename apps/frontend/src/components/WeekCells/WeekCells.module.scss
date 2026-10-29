@@ -1,0 +1,39 @@
+.week {
+  display: flex;
+  gap: 4px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.label {
+  text-transform: uppercase;
+}
+
+.inactive {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.yellow {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.red {
+  background: #fee2e2;
+  color: #b91c1c;
+}

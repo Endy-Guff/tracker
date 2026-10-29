@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/router.tsx","./src/api/groups/api.ts","./src/api/groups/hooks.ts","./src/api/groups/types.ts","./src/api/notes/api.ts","./src/api/notes/hooks.ts","./src/api/notes/types.ts","./src/pages/grouppage/index.tsx","./src/pages/groupspage/index.tsx"],"version":"5.8.3"}

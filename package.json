@@ -1,0 +1,9 @@
+{
+  "name": "tracker",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "pnpm --filter tracker-frontend dev",
+    "dev:backend": "pnpm --filter backend start:dev",
+    "build:frontend": "pnpm --filter tracker-frontend build"
+  }
+}
