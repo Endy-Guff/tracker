@@ -1,13 +1,16 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import cookieParser from 'cookie-parser';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.use(cookieParser());
+
   // TODO: restrict origin when deploying
-  app.enableCors();
+  app.enableCors({ origin: true, credentials: true });
   app.setGlobalPrefix('api');
 
   app.useGlobalPipes(

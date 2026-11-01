@@ -1,14 +1,25 @@
 import { createBrowserRouter } from 'react-router-dom'
+import { LoginPage } from './components/LoginPage'
+import { AppLayout } from './components/AppLayout'
 import GroupsPage from './pages/GroupsPage'
 import GroupPage from './pages/GroupPage'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <GroupsPage />,
+    path: '/login',
+    element: <LoginPage />,
   },
   {
-    path: '/groups/:id',
-    element: <GroupPage />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <GroupsPage />,
+      },
+      {
+        path: '/groups/:id',
+        element: <GroupPage />,
+      },
+    ],
   },
 ])
